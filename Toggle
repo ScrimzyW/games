@@ -1,17 +1,8 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local x9disabler = Instance.new("ScreenGui")
 local TextButton = Instance.new("TextButton")
+local UIStroke = Instance.new("UIStroke")
 local UICorner = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
-local UIGradient = Instance.new("UIGradient")
-local UIGradient_2 = Instance.new("UIGradient")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-
---Properties:
 
 x9disabler.Name = "x9disabler"
 x9disabler.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -19,8 +10,8 @@ x9disabler.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 x9disabler.ResetOnSpawn = false
 
 TextButton.Parent = x9disabler
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BackgroundTransparency = 0.450
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 165, 10)
+TextButton.BackgroundTransparency = 0.250
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
 TextButton.Position = UDim2.new(0.0824468061, 0, 0.688016534, 0)
@@ -29,7 +20,10 @@ TextButton.Font = Enum.Font.SourceSans
 TextButton.Text = ""
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
+
+UIStroke.Parent = TextButton
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Thickness = 3
 
 UICorner.CornerRadius = UDim.new(1, 0)
 UICorner.Parent = TextButton
@@ -39,42 +33,28 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.132978722, 0, 0.054371465, 0)
-TextLabel.Size = UDim2.new(0.707446933, 0, 0.86407131, 0)
-TextLabel.Font = Enum.Font.Sarpanch
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
 TextLabel.Text = "UI"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.37, Color3.fromRGB(174, 174, 174)), ColorSequenceKeypoint.new(0.51, Color3.fromRGB(171, 171, 171)), ColorSequenceKeypoint.new(0.67, Color3.fromRGB(173, 173, 173)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-UIGradient.Rotation = 90
-UIGradient.Parent = TextLabel
-
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(72, 14, 143)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(25, 3, 63))}
-UIGradient_2.Rotation = 90
-UIGradient_2.Parent = TextButton
-
-UIAspectRatioConstraint.Parent = TextButton
-UIAspectRatioConstraint.AspectRatio = 1.022
-
--- Scripts:
-
-local function FJVJ_fake_script() -- TextButton.LocalScript 
+local function FVSYG_fake_script()
 	local script = Instance.new('LocalScript', TextButton)
 
 	local coregui = game:GetService("CoreGui")
 	local startergui = game:GetService("StarterGui")
-
+	
 	if startergui:FindFirstChild("x9disabler") then
 		startergui:WaitForChild("x9disabler", 10):Destroy()
 	end
-
+	
 	if coregui:FindFirstChild("x9disabler") then
 		coregui:WaitForChild("x9disabler", 10):Destroy()
 	end
-
+	
 	script.Parent.Activated:Connect(function()
 		if coregui:FindFirstChild("X9Hub") then
 			local x0 = coregui:FindFirstChild("X9Hub")
@@ -84,4 +64,4 @@ local function FJVJ_fake_script() -- TextButton.LocalScript
 		end
 	end)
 end
-coroutine.wrap(FJVJ_fake_script)()
+coroutine.wrap(FVSYG_fake_script)()
